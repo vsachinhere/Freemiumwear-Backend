@@ -1,0 +1,64 @@
+spring:
+  application:
+    name: freemiumwear
+  profiles:
+    active: ${SPRING_PROFILES_ACTIVE}
+#  security:
+#    oauth2:
+#      resourceserver:
+#        jwt:
+#          issuer-uri: ${JWT_ISSUER_URI}
+  flyway:
+    enabled: true
+    baseline-on-migrate: true
+    locations: classpath:db.migration
+
+  datasource:
+    url: ${DB_URL}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+    driver-class-name: ${DB_DRIVER}
+    hikari:
+      schema: ${DB_SCHEMA}
+      maximum-pool-size: ${DB_POOL_SIZE}
+
+  jpa:
+    hibernate:
+      ddl-auto: ${JPA_DDL_AUTO}
+    properties:
+      hibernate:
+        default_schema: ${DB_SCHEMA}
+        dialect: ${JPA_DIALECT}
+  mail:
+    from-email-id: ${FROM_MAIL_ID}
+
+app:
+  whitelist:
+    paths:
+      - /v3/api-docs/**
+      - /swagger-ui/**
+      - /swagger-ui.html
+      - /swagger-resources/**
+      - /webjars/**
+      - /configuration/**
+      - /api/users/signUp
+      - /api/login/initiate
+      - /api/login/verify
+      - /api/v1/login
+      - /api/otp/send
+      - /api/otp/verify
+      - /actuator
+      - /actuator/**
+      - /api/login/refresh-token
+      - /api/users/getUser
+#
+#aws:
+#  region: ${AWS_REGION}
+#  cognito:
+#    userPoolId: ${AWS_COGNITO_USER_POOL_ID}
+#    appClientId: ${AWS_COGNITO_APP_CLIENT_ID}
+#  s3:
+#    bucket-name: ${AWS_COMMON_S3_BUCKET}
+#    bucket-folder: ${AWS_COMMON_S3_BUCKET_FOLDER}
+#  sqs:
+#    sms-queue-url: ${AWS_ICE_SMS_QUEUE}
