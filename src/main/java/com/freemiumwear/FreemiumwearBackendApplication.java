@@ -9,4 +9,5 @@ public class FreemiumwearBackendApplication {
     public static void main(String[] args) {
         SpringApplication.run(FreemiumwearBackendApplication.class, args);
     }
+
 }
