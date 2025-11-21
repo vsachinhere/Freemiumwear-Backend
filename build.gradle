@@ -103,7 +103,7 @@ tasks.named('test') {
 // -------------------- Determine Active Profile --------------------
 def activeProfile = System.getProperty('spring.profiles.active')
         ?: project.findProperty('spring.profiles.active')
-        ?: 'local'
+        ?: 'dev'
 
 println "Active profile: ${activeProfile}"
 
