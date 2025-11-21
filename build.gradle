@@ -138,10 +138,13 @@ bootRun {
 
 // -------------------- Flyway --------------------
 flyway {
-    url = env.DB_URL
-    user = env.DB_USERNAME
-    password = env.DB_PASSWORD
-    schemas = [env.DB_SCHEMA]
+//    url = env.DB_URL
+//    user = env.DB_USERNAME
+//    password = env.DB_PASSWORD
+    url = 'jdbc:postgresql://dpg-d4g4bmogjchc73dplirg-a.oregon-postgres.render.com:5432/freemiumwear'
+    user = 'freemiumwear'
+    password = 'g4fED6TVk5gLir9vjSzhPbziwBmX3wOF'
+    schemas = ['public']
     locations = ['filesystem:src/main/resources/db.migration']
     println "Loading flyway variables ${url}, ${user}, ${password},${schemas}"
 
