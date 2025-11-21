@@ -2,21 +2,21 @@ spring:
   application:
     name: freemiumwear
   profiles:
-    active: prod
-  #  security:
-  #    oauth2:
-  #      resourceserver:
-  #        jwt:
-  #          issuer-uri: ${JWT_ISSUER_URI}
+    active: local
+#  security:
+#    oauth2:
+#      resourceserver:
+#        jwt:
+#          issuer-uri: ${JWT_ISSUER_URI}
   flyway:
     enabled: true
     baseline-on-migrate: true
     locations: classpath:db.migration
 
   datasource:
-    url: jdbc:postgresql://dpg-d4g4bmogjchc73dplirg-a.oregon-postgres.render.com:5432/freemiumwear
-    username: freemiumwear
-    password: g4fED6TVk5gLir9vjSzhPbziwBmX3wOF
+    url: jdbc:postgresql://localhost:5432/testDB
+    username: postgres
+    password: root
     driver-class-name: org.postgresql.Driver
     hikari:
       schema: public
