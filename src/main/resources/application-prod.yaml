@@ -3,11 +3,11 @@ spring:
     name: freemiumwear
   profiles:
     active: prod
-  #  security:
-  #    oauth2:
-  #      resourceserver:
-  #        jwt:
-  #          issuer-uri: ${JWT_ISSUER_URI}
+#  security:
+#    oauth2:
+#      resourceserver:
+#        jwt:
+#          issuer-uri: ${JWT_ISSUER_URI}
   flyway:
     enabled: true
     baseline-on-migrate: true
